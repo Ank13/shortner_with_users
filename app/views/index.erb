@@ -1,0 +1,30 @@
+<div class="container">
+
+<br>
+<img src="/Honey.jpg" alt="honey I shrunk the kids photo" width="200">
+<br>
+<h1>Honey, I shrunk the links...</h1>
+
+<p>Enter the long URL below:</p>
+
+  <%= @error_message %>
+
+<form name="input" action="/urls"  method="post" >
+  Long URL: <input type="text" name="long_url">
+  <input id="submit_button" type ="submit" value = "Commence shrinkification">
+</form> <br>
+
+
+<h3> Shrunken URLs: </h3>
+<ul> <% @urls.each do |url| %> 
+
+  <li><span id="click">[<%=url.clicks %> clicks] </span> SHORT: <a href=<%= url.short_url %> > <%= url.short_url%> </a>, LONG: <%=url.long_url %> 
+  </li>
+
+<% end %></ul> 
+
+</div>
+
+
+
+
