@@ -10,7 +10,8 @@ post '/urls' do
     new_url = Url.create(:long_url => params[:long_url], :short_url => short_url, :clicks => 0, :user_id => session[:user_id])
     @error_message = new_url.errors[:long_url].first
     @urls = Url.all
-    erb :index
+    @user = User.find(session[:user_id])
+    erb :secret
   else
     new_url = Url.create(:long_url => params[:long_url], :short_url => short_url, :clicks => 0)
     @error_message = new_url.errors[:long_url].first
@@ -23,8 +24,6 @@ end
 get '/secret' do
   if session[:user_id] 
       @user = User.find(session[:user_id])
-      #authentication = User.find(session[:user_id])
-      #@name = authentication.name
       erb :secret
   else
     redirect '/'
