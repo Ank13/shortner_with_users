@@ -6,17 +6,25 @@ end
 # to shorten a URL
 post '/urls' do
   short_url = '/' + ((1..9).to_a + ('a'..'h').to_a).sample(6).join # Push to model
-  new_url = Url.create(:long_url => params[:long_url], :short_url => short_url, :clicks => 0)
-  @error_message = new_url.errors[:long_url].first
-  @urls = Url.all
-  erb :index
+  if session[:user_id]
+    new_url = Url.create(:long_url => params[:long_url], :short_url => short_url, :clicks => 0, :user_id => session[:user_id])
+    @error_message = new_url.errors[:long_url].first
+    @urls = Url.all
+    erb :index
+  else
+    new_url = Url.create(:long_url => params[:long_url], :short_url => short_url, :clicks => 0)
+    @error_message = new_url.errors[:long_url].first
+    @urls = Url.all
+    erb :index
+  end
 end
 
 # Change this to be the user's individual page with links 
 get '/secret' do
   if session[:user_id] 
-      authentication = User.find(session[:user_id])
-      @name = authentication.name
+      @user = User.find(session[:user_id])
+      #authentication = User.find(session[:user_id])
+      #@name = authentication.name
       erb :secret
   else
     redirect '/'
