@@ -49,11 +49,29 @@ h3 {
   font-style: italic;
 }
 
-#create {
-  float: left;
-}
-
-
 #login {
-  text-align: right;
+  /*text-align: right;*/
+  float: right;
+  padding-bottom: 30px;
+  width: 320px
 }
+
+#login label {
+  width: 75px;
+  /*text-align: left;*/
+  display: inline-block;
+}
+
+#create {
+  width: 350px;
+  /*float: left;*/
+
+}
+
+#create label {
+  display: inline-block;
+  width: 75px;
+}
+
+
+

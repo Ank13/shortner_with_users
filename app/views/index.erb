@@ -17,23 +17,27 @@
 
 <div class="container">
 
-  <form id="create" action='/create' method="post">  
-    <h3>New Users: Create Account</h3>
-      <input class="field" value="Full Name" type="text" name="name"> <br>
-      <input class="field" value="Email" type="text" name="email"> <br>
-      <input class="field" value="Password" type="password" name="password"> <br>
-    <input class="button" type="submit" value="Create me!">
-  </form>
-  <br>
-  
   <form id="login" action='/login' method="post">  
-    <h3>User Login</h3>
-      Email: <input class="field" type="text" name="email"> <br>
-      Password: <input class="field" type="password" name="password"> <br>
-    <input class="button" type="submit" value="Login">
+      <h3>User Login</h3>
+      <label for="email">Email:</label> 
+      <input class="field" type="text" name="email"> <br>
+      <label for="password">Password:</label> 
+      <input class="field" type="password" name="password"> <br>
+      <input class="button" type="submit" value="Login">
   </form>
-</div>
 
+  <form id="create" action='/create' method="post">  
+      <h3>New Users: Create Account</h3>
+      <label for="name">Fullname:</label> 
+      <input class="field"  type="text" name="name"><br>
+      <label for="email">Email:</label> 
+      <input class="field"  type="text" name="email"> <br>
+      <label for="password">Password:</label> 
+      <input class="field"  type="password" name="password"><br>
+      <input class="button" type="submit" value="Create me!">
+  </form>
+  
+</div>
 
 <div class="container">
   <h3> Shrunken URLs: </h3>
