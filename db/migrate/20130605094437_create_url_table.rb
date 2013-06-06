@@ -4,6 +4,7 @@ class CreateUrlTable < ActiveRecord::Migration
       t.string  :long_url
       t.string  :short_url
       t.integer :clicks
+      t.integer :user_id
       t.timestamps
     end
   end

@@ -1,5 +1,4 @@
 <div class="container">
-
 <br>
 <img src="/Honey.jpg" alt="honey I shrunk the kids photo" width="200">
 <br>
@@ -13,18 +12,34 @@
   Long URL: <input type="text" name="long_url">
   <input id="submit_button" type ="submit" value = "Commence shrinkification">
 </form> <br>
-
-
-<h3> Shrunken URLs: </h3>
-<ul> <% @urls.each do |url| %> 
-
-  <li><span id="click">[<%=url.clicks %> clicks] </span> SHORT: <a href=<%= url.short_url %> > <%= url.short_url%> </a>, LONG: <%=url.long_url %> 
-  </li>
-
-<% end %></ul> 
-
 </div>
 
 
+<div class="container">
+  <form action='/create' method="post">  
+    <h3>New Users: Create Account</h3>
+      Full Name: <input class="field" type="text" name="name"> <br>
+      Email: <input class="field" type="text" name="email"> <br>
+      Password: <input class="field" type="password" name="password"> <br>
+    <input class="button" type="submit" value="Create me!">
+  </form>
+  <br>
+  
+  <form action='/login' method="post">  
+    <h3>User Login</h3>
+      Email: <input class="field" type="text" name="email"> <br>
+      Password: <input class="field" type="password" name="password"> <br>
+    <input class="button" type="submit" value="Login">
+  </form>
+</div>
 
 
+<div class="container">
+  <h3> Shrunken URLs: </h3>
+  <ul> <% @urls.each do |url| %> 
+
+    <li><span id="click">[<%=url.clicks %> clicks] </span> SHORT: <a href=<%= url.short_url %> > <%= url.short_url%> </a>, LONG: <%=url.long_url %> 
+    </li>
+
+  <% end %></ul> 
+</div>

@@ -1,5 +1,5 @@
 source :rubygems
-
+gem 'bcrypt-ruby'
 # PostgreSQL driver
 gem 'pg'
 

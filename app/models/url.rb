@@ -1,6 +1,7 @@
 require 'uri'
 
 class Url < ActiveRecord::Base
+  belongs_to :user
   validate :url_format
   
   def url_format
